@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+/* Section that contains the entire Pokemon component */
+.pokemon-section {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: clamp(3.75rem, 8vw, 6.25rem);
+  padding-bottom: clamp(3.75rem, 8vw, 6.25rem);
+}
+
+/* div container within the section */
+.pokemon-container {
+  width: 100%;
+  margin: auto;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap between items is 48px on mobile - 64px on desktop */
+  gap: clamp(3rem, 6vw, 4rem);
+}
+
+/* Everything inside the containers have a width 100% and a max width of where they stop growing at for their desktop designed width. 
+No fixed widths. No forced heights. 
+You let things grow into their widths and let their heights be flexible based on the content. 
+That way if you add things,
+the containers can respond to the added content and accommodate the space. */
+
+/* Using grid instead of flexbox for content inside container */
+/* ul - card container */
+/* li - card */
+
+.pokemon-card-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.pokemon-card {
+  grid-column: span 12;
+  /* This creates a 12 column grid on the parent.  */
+  /* And the card is spanning all 12 columns.  */
+  /* With a gap of 16px on mobile and 20px on desktop. */
+
+  /* two by two tablet...  */
+  @media (min-width: 640px) {
+    grid-column: span 6;
+  }
+  /* four by four desktop...  */
+  @media (min-width: 1024px) {
+    grid-column: span 3;
+  }
+}
+
+/* optmisation (when we need to decie what grid we want */
+
+/* When to use flexbox vs grid ?
+
+
+- flexbox when things have a flexible width for children,
+- grid for things that need rigid widths and spacing (a grid !) for uniformity. 
+Flexbox is flexible. Grid is rigid (riGRID if you will). Only use grid for card sections or galleries of images.
+
+*/
