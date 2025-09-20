@@ -2,14 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import { getPokemon } from '../api/getPokemon';
 
 export const Home = () => {
-  // Queries
   const query = useQuery({ queryKey: ['todos'], queryFn: getPokemon });
 
   if (!query?.data?.results?.length) {
     return <div>Loading...</div>;
   }
-
-  console.log('query', query.data.results);
 
   return (
     <section className="pokemon-section">
