@@ -1,12 +1,7 @@
-### Vite eslint 2025
+### responsive layouts
 
-- Latest vite config with eslint
-- Vite tests
-  - Fire event
-  - useFakeTimers
-- Router v7 added and route mocking
-- Tailwind
-- Sonar for code coverage
+- responsive grid playaround and comparison using tailwind
+- Will likely keep this repo for other styling hacks
 
 ### Deployment
 
